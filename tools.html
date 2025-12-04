@@ -1,4 +1,3 @@
-<!-- tools.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,62 +8,100 @@
 <body>
   <div class="site-wrapper">
     <header>
-      <h1 class="site-title">Your Name</h1>
-      <p class="site-subtitle">Apps and simulations for teaching and research</p>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="tools.html" class="active">Apps & Simulations</a>
-      </nav>
+      <div class="header-top">
+        <div class="profile">
+          <div class="profile-avatar">
+            YN
+          </div>
+          <div class="profile-text">
+            <h1 class="site-title">Your Name</h1>
+            <p class="site-subtitle">Apps and simulations for teaching and research</p>
+            <div class="profile-tags">
+              Shared tools for students &amp; community
+            </div>
+          </div>
+        </div>
+
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="tools.html" class="active">Apps &amp; Simulations</a>
+        </nav>
+      </div>
     </header>
 
     <section>
-      <h2>Calculation Apps (Python)</h2>
+      <h2>
+        <span class="section-label"></span>
+        Calculation Apps (Python)
+      </h2>
       <p class="muted">
-        Online tools developed in Python for quick calculations.  
-        Feel free to use and share them with students and colleagues.
+        Online tools developed in Python (often based on MATLAB prototypes) to support coursework,
+        quick design checks, and exploratory analysis.
       </p>
 
-      <div class="card">
-        <div class="card-title">Voltage Divider Calculator</div>
-        <div class="card-meta">Topic: Basic electronics</div>
-        <p class="muted">
-          Computes the output voltage of a resistive divider. Useful for quick design checks.
-        </p>
-        <!-- Replace # with your Streamlit / web app URL -->
-        <a class="button-link" href="https://your-voltage-divider-app-url" target="_blank" rel="noopener">
-          Open app
-        </a>
-      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">Voltage Divider Calculator</div>
+          <div class="card-meta">Topic: Basic electronics</div>
+          <p class="muted">
+            Computes the output voltage for a resistive divider. Useful for quick checks during lab
+            and early-stage design.
+          </p>
+          <a class="button-link" href="https://your-voltage-divider-app-url" target="_blank" rel="noopener">
+            Open app
+          </a>
+        </div>
 
-      <div class="card">
-        <div class="card-title">[Another Calculator]</div>
-        <div class="card-meta">Topic: [e.g. power electronics]</div>
-        <p class="muted">
-          Short description of what it computes and how students can use it.
-        </p>
-        <a class="button-link" href="https://your-other-app-url" target="_blank" rel="noopener">
-          Open app
-        </a>
+        <div class="card">
+          <div class="card-title">[Power Converter Sizing Tool]</div>
+          <div class="card-meta">Topic: Power electronics</div>
+          <p class="muted">
+            Estimates key component ratings for a selected converter topology
+            (e.g., DC–DC, DC–AC) based on operating conditions.
+          </p>
+          <a class="button-link" href="https://your-other-app-url" target="_blank" rel="noopener">
+            Open app
+          </a>
+        </div>
+
+        <!-- Add more app cards here as you create new tools -->
       </div>
     </section>
 
     <section>
-      <h2>Simulations</h2>
+      <h2>
+        <span class="section-label"></span>
+        Simulations
+      </h2>
       <p class="muted">
-        Interactive simulations illustrating concepts from my courses and research.
+        Interactive simulations illustrating concepts discussed in lectures and in my research work.
+        They are intended as a complementary visualization, not a replacement for formal derivations.
       </p>
 
-      <div class="card">
-        <div class="card-title">[Example Simulation]</div>
-        <div class="card-meta">Course: [Course name]</div>
-        <p class="muted">
-          Brief description of the phenomenon being simulated (e.g. converter dynamics, control response).
-        </p>
-        <a class="button-link" href="https://your-simulation-url" target="_blank" rel="noopener">
-          Open simulation
-        </a>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">[Example Simulation]</div>
+          <div class="card-meta">Course: [Course name]</div>
+          <p class="muted">
+            Brief description of the phenomenon being simulated (e.g., step response of a controlled
+            converter, stability margins, harmonic content).
+          </p>
+          <a class="button-link" href="https://your-simulation-url" target="_blank" rel="noopener">
+            Open simulation
+          </a>
+        </div>
+
+        <!-- More simulation cards as needed -->
       </div>
     </section>
+
+    <footer>
+      &copy; <span id="year"></span> Your Name. All rights reserved.
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
