@@ -28,28 +28,52 @@
     </header>
 
     <section>
-      <h2>
-        <span class="section-label"></span>
-        Calculation Apps (Python)
-      </h2>
-      <p class="muted">
-        Online tools developed in Python (often based on MATLAB prototypes) to support coursework,
-        quick design checks, and exploratory analysis.
-      </p>
-<!--<a class="button-link" 
-   href="https://yourusername-streamlitapp.streamlit.app" 
-   target="_blank" 
-   rel="noopener">
-  Open app
-</a>-->
+<h2>
+  <span class="section-label"></span>
+  Power Electronics Calculation Apps
+</h2>
 
-<iframe
-  src="https://blank-app-doglc5pskds.streamlit.app?embed=true"
-  style="height: 450px; width: 100%;"
-></iframe>
+<p class="muted">
+Here are some interactive apps I've developed to assist with common calculations in power electronics and related fields. These tools are designed to help students and professionals quickly estimate parameters and validate designs.
+</p>
+
+<section>
 
 
-      <div class="cards-grid">
+  <!-- Dropdown to choose the app -->
+  <label for="app-select">Choose an app:</label>
+  <select id="app-select">
+    <option value="https://bucksizing.streamlit.app/?embed=true">
+      Buck Converter Sizing (CCM)
+    </option>
+   <!-- <option value="https://your-other-app.streamlit.app/?embed=true">
+      Voltage Divider Calculator
+    </option> -->
+    <!-- add more apps here -->
+  </select>
+
+  <!-- Single iframe that changes src -->
+  <div style="margin-top: 1rem;">
+    <iframe
+      id="app-frame"
+      src="https://bucksizing.streamlit.app/?embed=true"
+      style="width: 100%; height: 1600px; border: none;"
+      loading="lazy"
+    ></iframe>
+  </div>
+</section>
+
+<script>
+  const select = document.getElementById('app-select');
+  const frame  = document.getElementById('app-frame');
+
+  select.addEventListener('change', function () {
+    frame.src = this.value;   // only changes src, does not create new iframes
+  });
+</script>
+
+
+    <!--  <div class="cards-grid">
         <div class="card">
           <div class="card-title">Voltage Divider Calculator</div>
           <div class="card-meta">Topic: Basic electronics</div>
@@ -74,8 +98,8 @@
           </a>
         </div>
 
-        <!-- Add more app cards here as you create new tools -->
-      </div>
+        
+      </div> -->
     </section>
 
     <section>
@@ -84,11 +108,10 @@
         Simulations
       </h2>
       <p class="muted">
-        Interactive simulations illustrating concepts discussed in lectures and in my research work.
-        They are intended as a complementary visualization, not a replacement for formal derivations.
+      This section is in development. Check back later for interactive simulations related to power electronics and control systems.
       </p>
 
-      <div class="cards-grid">
+    <!--  <div class="cards-grid">
         <div class="card">
           <div class="card-title">[Example Simulation]</div>
           <div class="card-meta">Course: [Course name]</div>
@@ -101,9 +124,9 @@
           </a>
         </div>
 
-        <!-- More simulation cards as needed -->
+   
       </div>
-    </section>
+    </section>-->
 
     <footer>
       &copy; <span id="year"></span> Your Name. All rights reserved.
